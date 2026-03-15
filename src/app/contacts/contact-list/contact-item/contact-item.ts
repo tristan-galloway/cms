@@ -9,9 +9,9 @@ import { Contact } from '../../contact.model';
 })
 export class ContactItem {
   @Input() contact: Contact;
-  @Output() contactSelected = new EventEmitter<void>();
+  @Output() selectedContactEvent = new EventEmitter<Contact>();
 
   onSelected() {
-    this.contactSelected.emit();
+    this.selectedContactEvent.emit(this.contact);
   }
 }
